@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Sertifikat | Helisati Putra Hulu</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        /* Mengatur tata letak card */
+        #project-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+            gap: 20px; /* Spasi antar card */
+        }
+
+        /* Ukuran card */
+        .card {
+            width: 400px;
+            height: 300px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Untuk memperbesar gambar dalam pop-up */
+        #popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #popup-container img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        #popup-container .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Sertifikat</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sertifikat.html">Sertifikat</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="py-5">
+            <div class="container px-5 mb-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Sertifikat Saya</span></h1>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-11 col-xl-9 col-xxl-8">
+                        <div id="project-container">
+                            <!-- Project Card 1-->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project" id="project1">
+                                <img src="assets/s1.jpg" alt="Sertifikat HTML dan CSS" onclick="openPopup('assets/s1.jpg')" />
+                            </div>
+                            <!-- Project Card 2-->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project" id="project2">
+                                <img src="assets/s2.jpg" alt="Sertifikat JavaScript" onclick="openPopup('assets/s2.jpg')" />
+                            </div>
+                            <!-- Project Card 3-->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project" id="project3">
+                                <img src="assets/s3.jpg" alt="Sertifikat Pelatihan Pembuatan Robotik" onclick="openPopup('assets/s3.jpg')" />
+                            </div>
+                            <!-- Project Card 4-->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project" id="project4">
+                                <img src="assets/s4.jpg" alt="Desain Aplikasi" onclick="openPopup('assets/s4.jpg')" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup Container -->
+    <div id="popup-container">
+        <button class="close-btn" onclick="closePopup()">×</button>
+        <img id="popup-img" src="" alt="Project Image" />
+    </div>
+
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto"><div class="small m-0">Copyright &copy; Helisati Putra Hulu</div></div>
+                <div class="col-auto">
+                    <a class="small" href="#!">Privacy</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="#!">Terms</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="#!">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        // Fungsi untuk membuka popup
+        function openPopup(imageSrc) {
+            const popupContainer = document.getElementById('popup-container');
+            const popupImg = document.getElementById('popup-img');
+            popupImg.src = imageSrc;
+            popupContainer.style.display = 'flex';
+        }
+
+        // Fungsi untuk menutup popup
+        function closePopup() {
+            const popupContainer = document.getElementById('popup-container');
+            popupContainer.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
