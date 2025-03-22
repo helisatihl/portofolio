@@ -5,72 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Projects | Helisati Putra Hulu</title>
+    <title>Portfolio | Helisati Putra Hulu</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        /* Reset beberapa styling default */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Pengaturan body dan latar belakang */
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3f4f6;
+            color: #333;
+            flex-direction: column;
+        }
+
+        /* Container utama */
+        .container {
+            text-align: center;
+            background-color: white;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Container untuk flipbook */
+        .flipbook {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .page {
+            width: 100%;
+            height: 500px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.6s;
+        }
+
+        .flipbook .page img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Button navigation */
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .navigation button {
+            background-color: transparent;
+            border: none;
+            color: #333;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .navigation button:disabled {
+            color: #ccc;
+        }
+
+        /* Additional styling for content */
+        .page-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .page h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .page p {
+            color: #666;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 <body class="d-flex flex-column h-100 bg-light">
     <main class="flex-shrink-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
             <div class="container px-5">
-                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Projects</span></a>
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Portfolio</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
                         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                         <li class="nav-item"><a class="nav-link" href="sertifikat.html">Sertifikat</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sertifikat.html">Sertifikat</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+
         <section class="py-5">
             <div class="container px-5 mb-5">
-                <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
-                </div>
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-11 col-xl-9 col-xxl-8">
-                        <div id="project-container">
-                            <!-- Project Card 1-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project" id="project1">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Desain Menu</h2>
-                                            <p>Desain menu, pesanan ZK Coffe Shop & Doorsmeer</p>
-                                        </div>
-                                        <img class="img-fluid" src="assets/projek a.jpg" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project Card 2-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project" id="project2" style="display: none;">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Desain Baju</h2>
-                                            <p>Desain baju PDH, Pesanan Teknik Sipil Universitas Prima Indonesia</p>
-                                        </div>
-                                        <img class="img-fluid" src="assets/projek b.jpg" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
+                <div class="flipbook">
+                    <!-- Halaman 1 -->
+                    <div class="page" id="page1">
+                        <div class="page-content">
+                            <h2>Desain Menu</h2>
+                            <p>Desain menu, pesanan ZK Coffe Shop & Doorsmeer.</p>
+                            <img src="assets/projek a.jpg" alt="Project 1" />
                         </div>
-                        <div class="d-flex justify-content-between mt-4">
-                            <button class="btn btn-primary" id="prevBtn" onclick="showProject(1)">Kembali</button>
-                            <button class="btn btn-primary" id="nextBtn" onclick="showProject(2)">Lanjut</button>
+                    </div>
+                    <!-- Halaman 2 -->
+                    <div class="page" id="page2" style="display: none;">
+                        <div class="page-content">
+                            <h2>Desain Baju</h2>
+                            <p>Desain baju PDH, Pesanan Teknik Sipil Universitas Prima Indonesia.</p>
+                            <img src="assets/projek b.jpg" alt="Project 2" />
                         </div>
                     </div>
                 </div>
+
+                <!-- Tombol Navigasi -->
+                <div class="navigation">
+                    <button id="prevBtn" onclick="showPage(1)" disabled>&lt; Previous</button>
+                    <button id="nextBtn" onclick="showPage(2)">Next &gt;</button>
+                </div>
             </div>
         </section>
+
         <section class="py-5 bg-gradient-primary-to-secondary text-white">
             <div class="container px-5 my-5">
                 <div class="text-center">
@@ -80,6 +165,7 @@
             </div>
         </section>
     </main>
+
     <footer class="bg-white py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
@@ -94,23 +180,28 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
+
     <script>
-        let currentProject = 1;
+        let currentPage = 1;
 
-        function showProject(projectNumber) {
-            const project1 = document.getElementById('project1');
-            const project2 = document.getElementById('project2');
+        function showPage(pageNumber) {
+            const page1 = document.getElementById('page1');
+            const page2 = document.getElementById('page2');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
 
-            if (projectNumber === 1) {
-                project1.style.display = 'block';
-                project2.style.display = 'none';
-                currentProject = 1;
-            } else {
-                project1.style.display = 'none';
-                project2.style.display = 'block';
-                currentProject = 2;
+            if (pageNumber === 1) {
+                page1.style.display = 'block';
+                page2.style.display = 'none';
+                prevBtn.disabled = true;
+                nextBtn.disabled = false;
+                currentPage = 1;
+            } else if (pageNumber === 2) {
+                page1.style.display = 'none';
+                page2.style.display = 'block';
+                prevBtn.disabled = false;
+                nextBtn.disabled = true;
+                currentPage = 2;
             }
         }
     </script>
