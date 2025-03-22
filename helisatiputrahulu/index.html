@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Pemeliharaan</title>
+    <style>
+        /* Reset beberapa styling default */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Pengaturan body dan latar belakang */
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        /* Container utama */
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Gaya teks utama */
+        h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #ff6347; /* Warna merah tomat */
+        }
+
+        /* Gaya teks tambahan */
+        p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Animasi loader */
+        .loader {
+            border: 8px solid #f3f3f3; /* Light grey */
+            border-top: 8px solid #3498db; /* Warna biru */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            margin: 20px auto;
+        }
+
+        /* Animasi putaran */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Pengaturan untuk countdown */
+        .countdown {
+            font-size: 1.2rem;
+            color: #444;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="loader"></div>
+            <h1>Website Sedang Dalam Pemeliharaan</h1>
+            <p>Mohon tunggu beberapa saat. Kami sedang memperbaiki beberapa hal agar Anda mendapatkan pengalaman yang lebih baik.</p>
+            <p>Terima kasih atas pengertian Anda.</p>
+            <div class="countdown">Waktu tersisa: 72:00:00</div>
+        </div>
+    </div>
+
+    <script>
+        // Menghitung mundur selama 72 jam (259200 detik)
+        let countdownElement = document.querySelector('.countdown');
+        let totalSeconds = 72 * 60 * 60; // 72 jam dalam detik
+
+        function formatTime(seconds) {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const remainingSeconds = seconds % 60;
+            return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+        }
+
+        let interval = setInterval(() => {
+            countdownElement.textContent = `Waktu tersisa: ${formatTime(totalSeconds)}`;
+            totalSeconds--;
+
+            if (totalSeconds < 0) {
+                clearInterval(interval);
+                countdownElement.textContent = "Pemeliharaan selesai. Terima kasih telah menunggu!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
