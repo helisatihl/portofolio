@@ -23,54 +23,35 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                         <li class="nav-item"><a class="nav-link" href="sertifikat.html">Sertifikat</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Portofolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sertifikat.html">Sertifikat</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+        <!-- FlipHTML5 Embed -->
         <section class="py-5">
             <div class="container px-5 mb-5">
                 <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
+                    <h2 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Portofolio Flipbook</span></h2>
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
-                        <div id="project-container">
-                            <!-- Project Card 1-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project" id="project1">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Desain Menu</h2>
-                                            <p>Desain menu, pesanan ZK Coffe Shop & Doorsmeer</p>
-                                        </div>
-                                        <img class="img-fluid" src="assets/projek a.jpg" alt="..." />
-                                    </div>
-                                </div>
+                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                            <div class="card-body p-0">
+                                <iframe src="https://online.fliphtml5.com/qelop/npsw/" 
+                                        style="width: 100%; height: 600px; border: none;" 
+                                        allowfullscreen>
+                                </iframe>
                             </div>
-                            <!-- Project Card 2-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project" id="project2" style="display: none;">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Desain Baju</h2>
-                                            <p>Desain baju PDH, Pesanan Teknik Sipil Universitas Prima Indonesia</p>
-                                        </div>
-                                        <img class="img-fluid" src="assets/projek b.jpg" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between mt-4">
-                            <button class="btn btn-primary" id="prevBtn" onclick="showProject(1)">Kembali</button>
-                            <button class="btn btn-primary" id="nextBtn" onclick="showProject(2)">Lanjut</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
         <section class="py-5 bg-gradient-primary-to-secondary text-white">
             <div class="container px-5 my-5">
                 <div class="text-center">
@@ -80,6 +61,7 @@
             </div>
         </section>
     </main>
+
     <footer class="bg-white py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
@@ -94,25 +76,8 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script>
-        let currentProject = 1;
-
-        function showProject(projectNumber) {
-            const project1 = document.getElementById('project1');
-            const project2 = document.getElementById('project2');
-
-            if (projectNumber === 1) {
-                project1.style.display = 'block';
-                project2.style.display = 'none';
-                currentProject = 1;
-            } else {
-                project1.style.display = 'none';
-                project2.style.display = 'block';
-                currentProject = 2;
-            }
-        }
-    </script>
 </body>
 </html>
